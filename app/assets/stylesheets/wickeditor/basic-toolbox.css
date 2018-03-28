@@ -1,0 +1,28 @@
+.papertoolbox_toolbox {
+	position: absolute;
+
+	top: 10px;
+	left: 10px;
+
+	width: 50px;
+	height: 400px;
+
+	background-color: gray;
+}
+
+.papertoolbox_tool-icon {
+	width: 50px;
+	height: 50px;
+
+	background-color: green;
+
+	cursor: pointer;
+}
+
+.papertoolbox_tool-icon:hover {
+	background-color: blue;
+}
+
+.papertoolbox_tool-icon-active {
+	background-color: yellow;
+}

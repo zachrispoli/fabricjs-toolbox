@@ -1,0 +1,24 @@
+<%= stylesheet_link_tag 'wickeditor/basic-toolbox.css' %>
+
+<%= javascript_include_tag 'wickeditor/fabric.min.js' %>
+<%= javascript_include_tag 'wickeditor/paper-toolbox.js' %>
+<%= javascript_include_tag 'wickeditor/Cursor.js' %>
+<%= javascript_include_tag 'wickeditor/Pencil.js' %>
+<%= javascript_include_tag 'wickeditor/Shapes.js' %>
+<%= javascript_include_tag 'wickeditor/Text.js' %>
+<%= javascript_include_tag 'wickeditor/app.js' %>
+
+<script>
+  window.onload = function () {
+    app = new App();
+  }
+</script>
+
+<style>
+  body {
+    margin: 0px;
+    overflow: hidden;
+  }
+</style>
+
+<canvas id="paper-canvas"></canvas>
