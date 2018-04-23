@@ -20,6 +20,9 @@
         },
         onSelected : function (e) {
             e.fabric.isDrawingMode = true;
+            e.fabric.freeDrawingBrush.width = e.options.strokeWidth;
+            e.fabric.freeDrawingBrush.color = e.options.strokeColor;
+            
         },
         onDeselected : function (e) {
 

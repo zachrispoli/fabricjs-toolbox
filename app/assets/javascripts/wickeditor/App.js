@@ -6,7 +6,7 @@ App = function () {
     fabricCanvas.add(new fabric.Rect({ width: 50, height: 50, fill: 'red', top: 100, left: 100 }));
     fabricCanvas.add(new fabric.Rect({ width: 30, height: 30, fill: 'green', top: 50, left: 150 }));
     fabricCanvas.add(new fabric.Circle({ radius: 20, fill: 'blue', top: 160, left: 140 }));
-    fabricCanvas.add(new fabric.IText('text text text', {
+    fabricCanvas.add(new fabric.Textbox('text text text', {
         left: 300,
         top: 100,
         fontSize: 20,
@@ -22,6 +22,9 @@ App = function () {
     paperToolbox.addTool(PencilTool)
     paperToolbox.addTool(TextTool)
     paperToolbox.addTool(ShapesTool)
+    paperToolbox.addTool(PanTool)
+    paperToolbox.addTool(ZoomTool)
+    paperToolbox.addTool(CommentTool)
 
     window.addEventListener('resize', function () {
         fabricCanvas.lowerCanvasEl.style.width  = window.innerWidth+'px';
@@ -37,21 +40,22 @@ App = function () {
      * Example usage:
      *
      */
-    function save () {
+    function saveCanvas () {
         var json = JSON.stringify(fabricCanvas);
-        console.log(json)
+        return json;
     }
 
     /*
      * Example usage:
      *
      */
-    function load (json) {
+    function loadCanvas (json) {
         fabricCanvas.loadFromJSON(json, function() {
             fabricCanvas.renderAll();
         });
     }
 
-    self.save = save;
-    self.load = load;
+    self.saveCanvas = saveCanvas;
+    self.loadCanvas = loadCanvas;
+    self.toolbox = paperToolbox;
 }
